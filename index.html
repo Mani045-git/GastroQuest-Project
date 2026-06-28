@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>GastroQuest Pro</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+
+<i data-lucide="heart-pulse"></i>
+
+<h2>GastroQuest Pro</h2>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#dashboard">Dashboard</a></li>
+
+<li><a href="#simulation">Simulation</a></li>
+
+<li><a href="#quiz">Quiz</a></li>
+
+<li><a href="#about">About</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Interactive Human Digestive System</h1>
+
+<p>
+
+Learn digestion through real-time simulation and quizzes.
+
+</p>
+
+<button id="startBtn">
+
+▶ Start Simulation
+
+</button>
+
+</div>
+
+</section>
+
+<section
+id="dashboard"
+class="dashboard">
+
+<div class="card">
+
+<h3>❤️ Heart Rate</h3>
+
+<span id="heartRate">
+
+72 BPM
+
+</span>
+
+</div>
+
+<div class="card">
+
+<h3>💧 Hydration</h3>
+
+<span id="hydration">
+
+80%
+
+</span>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ Energy</h3>
+
+<span id="energy">
+
+95%
+
+</span>
+
+</div>
+
+<div class="card">
+
+<h3>🍎 Hunger</h3>
+
+<span id="hunger">
+
+75%
+
+</span>
+
+</div>
+
+</section>
+
+<section
+id="simulation"
+class="simulation">
+
+<h2>
+
+Interactive Digestion
+
+</h2>
+
+<div class="foodButtons">
+
+<button id="waterBtn">
+
+💧 Water
+
+</button>
+
+<button id="fruitBtn">
+
+🍎 Fruit
+
+</button>
+
+<button id="burgerBtn">
+
+🍔 Burger
+
+</button>
+
+<button id="alcoholBtn">
+
+🍺 Alcohol
+
+</button>
+
+</div>
+
+<div class="liveBox">
+
+<h3>
+
+Live Digestion Status
+
+</h3>
+
+<p id="liveStatus">
+
+Press any food button to start digestion.
+
+</p>
+
+</div>
+<div class="digestive-container">
+
+    <!-- Human Digestive System -->
+
+    <div id="humanBody">
+
+        <svg class="digestive-svg" viewBox="0 0 400 700">
+
+            <!-- Head -->
+            <circle cx="200" cy="60" r="40" fill="#FFD6B3"/>
+
+            <!-- Neck -->
+            <rect x="190" y="95" width="20" height="25" fill="#FFD6B3"/>
+
+            <!-- Body -->
+            <rect x="140" y="120" width="120" height="250" rx="25" fill="#c8ecff"/>
+
+            <!-- Esophagus -->
+            <rect id="esophagus"
+                  x="193"
+                  y="110"
+                  width="14"
+                  height="120"
+                  fill="#ffb347"/>
+
+            <!-- Liver -->
+            <ellipse id="liver"
+                     cx="165"
+                     cy="210"
+                     rx="45"
+                     ry="25"
+                     fill="#8B4513"/>
+
+            <!-- Stomach -->
+            <path id="stomach"
+                  d="M210 190
+                  C250 190 260 240 235 285
+                  C210 310 180 280 185 235
+                  C188 205 195 190 210 190Z"
+                  fill="#ff5c77"/>
+
+            <!-- Pancreas -->
+            <ellipse id="pancreas"
+                     cx="205"
+                     cy="300"
+                     rx="45"
+                     ry="10"
+                     fill="#FFD54F"/>
+
+            <!-- Small Intestine -->
+            <path id="small"
+                  d="M170 330
+                     Q240 340 170 360
+                     Q250 380 170 400
+                     Q250 420 170 440
+                     Q250 460 170 480"
+                  stroke="#FFE14D"
+                  stroke-width="18"
+                  fill="none"
+                  stroke-linecap="round"/>
+
+            <!-- Large Intestine -->
+            <rect id="large"
+                  x="135"
+                  y="315"
+                  width="130"
+                  height="190"
+                  rx="18"
+                  fill="none"
+                  stroke="#00C8FF"
+                  stroke-width="14"/>
+
+            <!-- Rectum -->
+            <rect id="rectum"
+                  x="194"
+                  y="505"
+                  width="12"
+                  height="60"
+                  fill="#00C8FF"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Organ Information -->
+
+    <div class="organ-info">
+
+        <h2>Digestive Organs</h2>
+
+        <div class="organ-buttons">
+
+            <button id="mouthInfo">👄 Mouth</button>
+
+            <button id="esophagusInfo">🟠 Esophagus</button>
+
+            <button id="stomachInfo">🫃 Stomach</button>
+
+            <button id="liverInfo">🟤 Liver</button>
+
+            <button id="pancreasInfo">🟡 Pancreas</button>
+
+            <button id="smallInfo">🟨 Small Intestine</button>
+
+            <button id="largeInfo">🔵 Large Intestine</button>
+
+        </div>
+
+        <div class="info-box">
+
+            <h3>Organ Information</h3>
+
+            <p id="organDescription">
+
+                Click an organ or its button to view its function.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+<!-- ================= QUIZ SECTION ================= -->
+
+<section id="quiz" class="quiz">
+
+    <h2>🧠 Human Digestive System Quiz</h2>
+
+    <div class="quiz-box">
+
+        <h3 id="question">
+            Question will appear here
+        </h3>
+
+        <div id="options">
+            <!-- Options added by JavaScript -->
+        </div>
+
+        <div class="quiz-controls">
+
+            <button id="nextQuestion">
+                Next Question ➜
+            </button>
+
+            <button id="restartQuiz">
+                🔄 Restart Quiz
+            </button>
+
+        </div>
+
+        <div class="score-board">
+
+            <h3>
+                Score :
+                <span id="score">0</span>
+                /
+                <span id="total">10</span>
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about">
+
+    <h2>About GastroQuest Pro</h2>
+
+    <p>
+
+        GastroQuest Pro is an interactive Human Digestive System
+        simulator designed for Biology students.
+
+    </p>
+
+    <ul>
+
+        <li>✔ Interactive Digestive System</li>
+
+        <li>✔ Food Simulation</li>
+
+        <li>✔ Organ Information</li>
+
+        <li>✔ Live Dashboard</li>
+
+        <li>✔ Biology Quiz</li>
+
+    </ul>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>🩺 GastroQuest Pro</h2>
+
+    <p>
+
+        Learn Human Digestion through Interactive Simulation
+
+    </p>
+
+    <p>
+
+        © 2026 GastroQuest Pro | Biology Learning Project
+
+    </p>
+
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
+
+<script>
+if (window.lucide) {
+    lucide.createIcons();
+}
+</script>
+
+</body>
+</html>
